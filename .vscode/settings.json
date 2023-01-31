@@ -1,0 +1,9 @@
+{
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "files.eol": "\n",
+  "files.autoSave": "off",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
