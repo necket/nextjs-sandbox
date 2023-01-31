@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { GetStaticProps } from 'next'
 import Head from 'next/head';
 import Image from 'next/image';
 import { Row, Col } from "reactstrap";
@@ -12,8 +13,26 @@ import homeImage from '../assets/images/home.png';
 import styles from '../styles/modules/Home.module.scss';
 import { Layout } from '../components/Layout/Layout';
 import { Post } from '../components/Post/Post';
+import { getPostById, type BlogPostXhr } from '../api';
 
-const Page = () => {
+interface Props {
+  post: BlogPostXhr;
+}
+
+const Page = ({ post }: Props) => {
+  const renderPost = () => {
+    const { id, title, body, userId } = post;
+
+    return (
+      <Post 
+        id={id}
+        title={title}
+        body={body}
+        userId={userId}
+      />
+    )
+  }
+
   return (
     <>
       <Head>
@@ -80,13 +99,21 @@ const Page = () => {
 
       <div className={styles.bestPost}>
         <h2>Best Post of Month</h2>
-        <Post />
+        {renderPost()}
       </div>
     </>
   )
 }
 
-Page.getLayout = function getLayout(page: ReactElement) {
+export const getStaticProps: GetStaticProps = async () => {
+  const post = await getPostById(1);
+
+  return {
+    props: { post }
+  }
+}
+
+Page.getLayout = (page: ReactElement) => {
   return (
     <Layout>
       {page}
