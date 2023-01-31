@@ -1,8 +1,17 @@
 import { ReactElement } from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
+import { Row, Col } from "reactstrap";
 
+import BookOpen from '../assets/icons/BookOpen.svg';
+import FlowArrow from '../assets/icons/FlowArrow.svg';
+import GraduationCap from '../assets/icons/GraduationCap.svg';
+import Pen from '../assets/icons/Pen.svg';
+import homeImage from '../assets/images/home.png';
+
+import styles from '../styles/modules/Home.module.scss';
 import { Layout } from '../components/Layout/Layout';
-
+import { Post } from '../components/Post/Post';
 
 const Page = () => {
   return (
@@ -13,6 +22,66 @@ const Page = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <div className={styles.heading}>
+        <h1>Lorem ipsum <strong>Blog</strong> sit</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fringilla</p>
+
+        <Image 
+          src={homeImage}
+          alt="Home page image"
+        />
+      </div>
+
+      <div className={styles.info}>
+        <Row>
+          <Col md={5}>
+            <div className={styles.info__main}>
+              <h2>Lorem ipsum dolor sit amet</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Morbi fringilla tincidunt sapien sed varius.
+                Nam ut condimentum velit, eget gravida leo. Etiam venenatis lacinia urna
+              </p>
+            </div>
+          </Col>
+          <Col md={7}>
+            <div className={styles.info__blocks}>
+              <Row>
+                <Col md={6}>
+                  <span className={styles.info__blocks_one}>
+                    <BookOpen />
+                    <p>lorem ipsum</p>
+                  </span>
+                </Col>
+                <Col md={6}>
+                  <span className={styles.info__blocks_two}>
+                    <FlowArrow />
+                    <p>lorem ipsum</p>
+                  </span>
+                </Col>
+                <Col md={6}>
+                  <span className={styles.info__blocks_three}>
+                    <GraduationCap />
+                    <p>lorem ipsum</p>
+                  </span>
+                </Col>
+                <Col md={6}>
+                  <span className={styles.info__blocks_four}>
+                    <Pen />
+                    <p>lorem ipsum</p>
+                  </span>
+                </Col>
+              </Row>
+            </div>
+          </Col>
+        </Row>
+      </div>
+
+      <div className={styles.bestPost}>
+        <h2>Best Post of Month</h2>
+        <Post />
+      </div>
     </>
   )
 }
