@@ -19,7 +19,8 @@ const Page = ({ posts }: Props) => {
 }
 
 export const getStaticProps = async () => {
-  const posts = await getAllPosts();
+  const data = await getAllPosts();
+  const posts = data.slice(0, 20);
 
   return {
     props: { posts }

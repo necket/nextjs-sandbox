@@ -31,7 +31,7 @@ export const Header = () => {
           )}
         </div>
         <div className={styles.profile}>
-          <button className={styles.login}>Login</button>
+          <button className={styles.login} title="Coming soon...">Login</button>
         </div>
         </div>
     </div>

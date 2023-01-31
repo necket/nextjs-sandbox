@@ -5,14 +5,16 @@ import { Row, Col } from "reactstrap";
 
 import postNoImage from '../../assets/images/post.png';
 import styles from './Post.module.scss';
-import { type BlogPostXhr } from '../../api';
+import { type BlogPostXhr, type User } from '../../api';
 
 interface Props extends Omit<BlogPostXhr, 'userId'> {
   imageUrl?: string;
   userId?: number;
+  showReadMore?: boolean;
+  user?: User
 }
 
-export const Post = ({ id, title, body, imageUrl }: Props) => {
+export const Post = ({ id, title, body, imageUrl, showReadMore = true, user }: Props) => {
   return (
     <div className={styles.post}>
       <Row>
@@ -34,9 +36,25 @@ export const Post = ({ id, title, body, imageUrl }: Props) => {
                 {body}
               </p>
             </div>
-            <Link href={`/posts/${id}`} className={styles.link}>
-              Read more
-            </Link>
+            {
+              user && (
+                <div className={styles.createdBy}>
+                  <p>
+                    <strong>Created by:</strong> {user.name}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> <a href={`mailto:${user.email}`} className={styles.createdBy__email}>{user.email}</a>
+                  </p>
+                </div>
+              )
+            }
+            { 
+              showReadMore && (
+                <Link href={`/posts/${id}`} className={styles.link}>
+                  Read more
+                </Link>
+              )
+            }
           </div>
         </Col>
       </Row>

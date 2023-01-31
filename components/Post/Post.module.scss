@@ -46,3 +46,16 @@
     transform: scale(1.01);
   }
 }
+
+.createdBy {
+  font-size: 18px;
+  color: $dark-blue-color;
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  &__email {
+    color: $blue-text-color;
+  }
+}
