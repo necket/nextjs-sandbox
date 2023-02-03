@@ -9,17 +9,20 @@ import { type CreateCommentBody } from '../../../api';
 
 interface Props {
   isLoading: boolean;
-  onSubmit: (body: Omit<CreateCommentBody, 'postId'>) => void;
+  onSubmit: (body: Omit<CreateCommentBody, 'postId'>) => Promise<void>;
 }
 
 export const CreateForm = ({ isLoading, onSubmit }: Props) => {
-  const { values, handleChange, handleSubmit } = useFormik({
+  const { values, handleChange, handleSubmit, resetForm } = useFormik({
     initialValues: {
       email: '',
       name: '',
       body: '',
     },
-    onSubmit,
+    onSubmit: async (values) => {
+      await onSubmit(values);
+      resetForm();
+    },
   });
 
 
