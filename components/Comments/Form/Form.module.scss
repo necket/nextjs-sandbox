@@ -1,0 +1,10 @@
+.form {
+  &__title {
+    font-weight: 700;
+  }
+
+  textarea {
+    height: 200px;
+    resize: none;
+  }
+}

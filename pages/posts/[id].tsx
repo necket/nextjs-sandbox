@@ -5,6 +5,7 @@ import { ParsedUrlQuery } from "querystring";
 import { Layout } from "../../components/Layout/Layout";
 import { getAllPosts, getPostById, getUserById, type BlogPostXhr, type User } from '../../api';
 import { Post } from "../../components/Post/Post";
+import { Comments } from "../../components/Comments/Comments";
 
 interface Params extends ParsedUrlQuery {
 	id: string;
@@ -19,6 +20,7 @@ const Page = ({ post: { id, userId, title, body }, user }: Props) => {
   return (
     <div>
       <Post id={id} userId={userId} title={title} body={body} showReadMore={false} user={user}/>
+      <Comments postId={id} />
     </div>
   )
 }

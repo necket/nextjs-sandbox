@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Row, Col } from "reactstrap";
 
 import postNoImage from '../../assets/images/post.png';
 import styles from './Post.module.scss';
 import { type BlogPostXhr, type User } from '../../api';
+import { Button } from '../Button/Button';
 
 interface Props extends Omit<BlogPostXhr, 'userId'> {
   imageUrl?: string;
@@ -50,9 +50,9 @@ export const Post = ({ id, title, body, imageUrl, showReadMore = true, user }: P
             }
             { 
               showReadMore && (
-                <Link href={`/posts/${id}`} className={styles.link}>
+                <Button to={`/posts/${id}`}>
                   Read more
-                </Link>
+                </Button>
               )
             }
           </div>

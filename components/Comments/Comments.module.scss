@@ -1,0 +1,24 @@
+
+
+.comments {
+  margin-top: 50px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.noComments {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+  p {
+    font-size: 12px;
+    opacity: 0.5;
+  }
+}
