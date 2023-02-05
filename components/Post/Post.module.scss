@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .post {
-  margin: 50px 0;
+  margin-bottom: 50px;
 }
 
 .image {
@@ -21,6 +21,17 @@
   font-weight: 700;
   font-size: 36px;
   color: $dark-blue-color;
+}
+
+@media (max-width: $lg-breakpoint) {
+  .content {
+    padding: 10px;
+  }
+
+  .title {
+    margin-top: 30px;
+    font-size: 25px;
+  }
 }
 
 .body {

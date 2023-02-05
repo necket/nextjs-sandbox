@@ -1,6 +1,7 @@
 @import '../variables.scss';
 
 .heading {
+  margin-top: 30px;
   text-align: center;
 
   h1 {
@@ -32,6 +33,12 @@
 
     h2 {
       font-size: 55px;
+    }
+
+    @media (max-width: $lg-breakpoint) {
+      h2 {
+        font-size: 35px;
+      }
     }
 
     p {
@@ -75,5 +82,11 @@
     color: $dark-blue-color;
     font-size: 30px;
     margin-bottom: 60px;
+  }
+
+  @media (max-width: $sm-breakpoint) {
+    h2 {
+      text-align: center;
+    }
   }
 }

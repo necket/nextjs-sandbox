@@ -48,7 +48,7 @@ export const Comments = ({ postId }: Props) => {
     );
 
     return (
-      <div>
+      <div className={styles.comments}>
         {data.map(({ id, name, body, email }) => (
           <Comment key={id} name={name} body={body} email={email}/>
         ))}
@@ -57,7 +57,7 @@ export const Comments = ({ postId }: Props) => {
   }
 
   return (
-    <div className={styles.comments}>
+    <div className={styles.container}>
       <Row>
         <Col lg={6}>
           <CreateForm isLoading={isSubmitting} onSubmit={handleSubmit}/>

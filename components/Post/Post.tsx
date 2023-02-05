@@ -18,7 +18,7 @@ export const Post = ({ id, title, body, imageUrl, showReadMore = true, user }: P
   return (
     <div className={styles.post}>
       <Row>
-        <Col md={6}>
+        <Col lg={6}>
           <Image 
             src={imageUrl ?? postNoImage}
             alt="No image"
@@ -26,7 +26,7 @@ export const Post = ({ id, title, body, imageUrl, showReadMore = true, user }: P
             loading="lazy"
           />
         </Col>
-        <Col md={6}>
+        <Col lg={6}>
           <div className={styles.content}>
             <div>
               <p className={styles.title}>

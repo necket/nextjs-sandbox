@@ -51,7 +51,7 @@ const Page = ({ post }: Props) => {
 
       <div className={styles.info}>
         <Row>
-          <Col md={5}>
+          <Col md={6} lg={5}>
             <div className={styles.info__main}>
               <h2>Lorem ipsum dolor sit amet</h2>
               <p>
@@ -61,28 +61,28 @@ const Page = ({ post }: Props) => {
               </p>
             </div>
           </Col>
-          <Col md={7}>
+          <Col md={6} lg={7}>
             <div className={styles.info__blocks}>
               <Row>
-                <Col md={6}>
+                <Col lg={6}>
                   <span className={styles.info__blocks_one}>
                     <BookOpen />
                     <p>lorem ipsum</p>
                   </span>
                 </Col>
-                <Col md={6}>
+                <Col lg={6}>
                   <span className={styles.info__blocks_two}>
                     <FlowArrow />
                     <p>lorem ipsum</p>
                   </span>
                 </Col>
-                <Col md={6}>
+                <Col lg={6}>
                   <span className={styles.info__blocks_three}>
                     <GraduationCap />
                     <p>lorem ipsum</p>
                   </span>
                 </Col>
-                <Col md={6}>
+                <Col lg={6}>
                   <span className={styles.info__blocks_four}>
                     <Pen />
                     <p>lorem ipsum</p>
