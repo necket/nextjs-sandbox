@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 import { GetStaticProps } from "next";
+import Head from "next/head";
 import { ParsedUrlQuery } from "querystring";
 
 import { Layout } from "../../components/Layout/Layout";
@@ -19,6 +20,9 @@ interface Props {
 const Page = ({ post: { id, userId, title, body }, user }: Props) => {
   return (
     <div>
+      <Head>
+        <title>{`Post #${id} - ${title}`}</title>
+      </Head>
       <Post id={id} userId={userId} title={title} body={body} showReadMore={false} user={user}/>
       <Comments postId={id} />
     </div>
